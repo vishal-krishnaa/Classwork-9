@@ -1,0 +1,19 @@
+{% extends 'layout/app-layout.html' %}
+{% block 'content' %}
+    <h1>Result of {{ name }}</h1>
+
+    {% if marks %}
+        <table border="1" cellpadding="8">
+            <tr><th>Subject</th><th>Marks</th></tr>
+            <tr><td>Maths</td><td>{{ marks.maths }}</td></tr>
+            <tr><td>Science</td><td>{{ marks.science }}</td></tr>
+            <tr><td>English</td><td>{{ marks.english }}</td></tr>
+            <tr><th>Total</th><th>{{ total }} / 300</th></tr>
+        </table>
+    {% else %}
+        <p>No result found for {{ name }}.</p>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'home' %}">← Back to Students</a>
+{% endblock %}
